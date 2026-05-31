@@ -164,7 +164,7 @@ body::before {
 
 .art-section {
   position: relative;
-  width: min(100%, 1024px);
+  width: min(100%, 941px);
   margin: 0 auto;
   line-height: 0;
   background: #061927;
