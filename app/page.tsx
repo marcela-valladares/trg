@@ -166,16 +166,6 @@ const plans = [
   }
 ];
 
-const mobileSectionIds = new Set([
-  "sobre",
-  "como-funciona",
-  "faq",
-  "depoimentos",
-  "planos",
-  "projeto-social",
-  "cta-final"
-]);
-
 const navHotspots: Hotspot[] = [
   { label: "Sobre", href: "#sobre", x: 37, y: 2, w: 5, h: 5 },
   { label: "Como funciona", href: "#como-funciona", x: 43, y: 2, w: 10, h: 5 },
@@ -409,18 +399,8 @@ export default function Home() {
             height={section.height}
             priority={index === 0}
             sizes="(max-width: 1024px) 100vw, 1024px"
-            className={`art-image ${
-              mobileSectionIds.has(section.id) ? "desktop-art-image" : ""
-            }`}
+            className="art-image"
           />
-
-          {section.id === "sobre" ? <MobileAbout /> : null}
-          {section.id === "como-funciona" ? <MobileTrg /> : null}
-          {section.id === "faq" ? <MobileBenefits /> : null}
-          {section.id === "depoimentos" ? <MobileTestimonials /> : null}
-          {section.id === "planos" ? <MobilePlans /> : null}
-          {section.id === "projeto-social" ? <MobileSocial /> : null}
-          {section.id === "cta-final" ? <MobileFinal /> : null}
 
           {section.hotspots?.map((hotspot, hotspotIndex) => (
             <a

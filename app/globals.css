@@ -253,14 +253,10 @@ body::before {
     width: 46px;
   }
 
-  .desktop-art-image {
-    display: none;
-  }
-
   .mobile-rich-section {
-    display: block;
+    display: none;
     line-height: 1.45;
-    padding: 48px 20px;
+    padding: 34px 18px 42px;
     color: #fff;
     background:
       radial-gradient(circle at 20% 0%, rgba(212, 175, 55, 0.16), transparent 34%),
@@ -279,7 +275,7 @@ body::before {
   .mobile-rich-section h2 {
     margin: 0;
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: clamp(2.3rem, 11.4vw, 3.7rem);
+    font-size: clamp(1.95rem, 8.4vw, 2.8rem);
     font-weight: 500;
     line-height: 1.04;
   }
@@ -293,8 +289,8 @@ body::before {
   .mobile-intro {
     margin: 18px 0 0;
     color: rgba(255, 255, 255, 0.78);
-    font-size: 1.14rem;
-    line-height: 1.72;
+    font-size: 1rem;
+    line-height: 1.62;
   }
 
   .mobile-photo-card {
@@ -450,14 +446,8 @@ body::before {
 
   .testimonial-carousel {
     display: grid;
-    grid-auto-columns: minmax(82%, 1fr);
-    grid-auto-flow: column;
     gap: 16px;
-    padding: 26px 2px 10px;
-    margin-inline: -2px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
+    padding: 24px 0 6px;
   }
 
   .testimonial-carousel::-webkit-scrollbar {
@@ -465,13 +455,12 @@ body::before {
   }
 
   .testimonial-card {
-    min-height: 430px;
-    padding: 24px;
+    min-height: auto;
+    padding: 22px;
     border: 1px solid rgba(212, 175, 55, 0.72);
     border-radius: 22px;
     background: rgba(4, 25, 39, 0.72);
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
-    scroll-snap-align: center;
   }
 
   .testimonial-avatar {
@@ -491,20 +480,21 @@ body::before {
   .testimonial-card h3 {
     margin: 0;
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: 1.55rem;
+    font-size: 1.45rem;
     font-weight: 500;
   }
 
   .testimonial-context {
     margin: 4px 0 16px;
     color: rgba(255, 255, 255, 0.62);
-    font-size: 0.82rem;
+    font-size: 0.95rem;
+    line-height: 1.35;
   }
 
   .testimonial-card p {
     color: rgba(255, 255, 255, 0.84);
-    font-size: 1.08rem;
-    line-height: 1.65;
+    font-size: 1rem;
+    line-height: 1.58;
   }
 
   .testimonial-card strong {
@@ -512,16 +502,16 @@ body::before {
     margin-top: 18px;
     color: #d49a3a;
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: 1.26rem;
+    font-size: 1.14rem;
     font-style: italic;
     font-weight: 500;
     line-height: 1.36;
   }
 
   .swipe-hint {
-    margin: 8px 0 0;
+    margin: 14px 0 0;
     color: rgba(255, 255, 255, 0.55);
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     text-align: center;
   }
 
@@ -545,7 +535,7 @@ body::before {
   .mobile-plan-card {
     position: relative;
     overflow: hidden;
-    padding: 26px 22px 22px;
+    padding: 24px 20px 22px;
     border: 1px solid rgba(180, 119, 31, 0.5);
     border-radius: 24px;
     background: #fff8f0;
@@ -576,7 +566,7 @@ body::before {
     margin: 0;
     color: #092235;
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: clamp(1.8rem, 8vw, 2.55rem);
+    font-size: clamp(1.6rem, 7vw, 2.25rem);
     font-weight: 500;
     line-height: 1.05;
   }
@@ -584,8 +574,8 @@ body::before {
   .plan-description {
     margin: 14px 0 18px;
     color: rgba(9, 34, 53, 0.72);
-    font-size: 1.08rem;
-    line-height: 1.58;
+    font-size: 1rem;
+    line-height: 1.52;
   }
 
   .plan-from {
@@ -600,7 +590,7 @@ body::before {
     margin: 4px 0;
     color: #b4771f;
     font-family: var(--font-playfair), Georgia, serif;
-    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    font-size: clamp(2.25rem, 10vw, 3.2rem);
     line-height: 1;
   }
 
@@ -609,7 +599,7 @@ body::before {
   .plan-saving {
     margin: 5px 0;
     color: rgba(9, 34, 53, 0.78);
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .plan-per {
@@ -720,17 +710,18 @@ body::before {
 
   .floating-whatsapp {
     right: 14px;
-    bottom: 14px;
-    width: calc(100% - 28px);
-    height: 58px;
-    border: 0;
-    border-radius: 999px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    width: 68px;
+    min-width: 68px;
+    height: 68px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
   }
 
   .floating-whatsapp::before {
-    content: "Conversar no WhatsApp";
-    font-size: 0.95rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    content: "Whats";
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
   }
 }
